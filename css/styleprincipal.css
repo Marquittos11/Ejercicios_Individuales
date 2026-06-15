@@ -1,0 +1,392 @@
+/* ========================================================================= */
+/* ESTILOS GLOBALES */
+/* ========================================================================= */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* COLORES PERSONALIZADOS */
+.text-magenta {
+    color: #8b1458 !important; /* El color magenta oscuro de la imagen */
+}
+
+/* ========================================================================= */
+/* SECCIÓN DE LOGIN (Se oculta al ingresar) */
+/* ========================================================================= */
+#loginSection {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(135deg, #ff9ecf, #ffc2dd, #ffd6e8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+#loginSection.active {
+    display: flex;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 420px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 8px 32px rgba(139, 20, 88, 0.15);
+}
+
+.login-box h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #8b1458;
+    font-weight: bold;
+}
+
+.login-box .form-label {
+    color: #8b1458;
+    font-weight: 500;
+}
+
+.login-box .form-control {
+    border-radius: 12px;
+}
+
+.btn-primary {
+    background-color: #ff4fa3 !important;
+    border-color: #ff4fa3 !important;
+    border-radius: 12px !important;
+    font-weight: bold;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #8b1458 !important;
+}
+
+/* ========================================================================= */
+/* SECCIÓN DE SISTEMA: LA ESTRUCTURA FLEX DEFECTIVA */
+/* ========================================================================= */
+#sistemaSection {
+    display: none; /* JS lo activa a 'flex' */
+    flex-direction: column;
+    min-height: 100vh; /* Obliga a ocupar toda la pantalla */
+    width: 100%;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3i5QY3H8M2K-6vSj8e6xO7yY_Hj-w_p7wQ&s'); /* Usa una ruta de imagen de fondo transparente/rosa suave */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* NAVBAR GLASS estilo de la imagen */
+.navbar-glass {
+    background: rgba(255, 255, 255, 0.35) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 15px 30px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.navbar-logo {
+    max-height: 50px; /* Tamaño del logo en la navbar */
+}
+
+.nav-link {
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.nav-link:hover {
+    color: #ff4fa3 !important;
+}
+
+/* ÁREA CENTRAL: Ocupa todo el espacio dinámico vertical */
+.main-content {
+    flex: 1;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+/* CONTENEDOR DE LA ILUSTRACIÓN */
+.illustration-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* LA IMAGEN CENTRAL PROTAGONISTA AJUSTADA */
+.central-illustration {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* FOOTER GLASS: Fijo abajo siempre */
+.footer-glass {
+    background: rgba(255, 255, 255, 0.3) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #8b1458; /* Mismo color magenta del menú */
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-weight: 500;
+}
+
+.footer-glass p {
+    margin: 3px 0;
+}
+
+/* DROPDOWN MENU ESTILO GLASS */
+.dropdown-menu {
+    border: none;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+    color: #8b1458;
+    font-weight: 500;
+}
+
+.dropdown-item:hover {
+    background-color: #ffd6e8;
+}
+
+/* RESPONSIVE */
+@media(max-width:992px){
+    .navbar-collapse {
+        margin-top: 15px;
+    }
+    .central-illustration {
+        max-width: 500px;
+    }
+}
+
+@media(max-width:768px){
+    .login-box {
+        width: 90%;
+    }
+    .central-illustration {
+        max-width: 90%;
+    }
+    .main-content {
+        padding: 20px;
+    }
+}
+/* ========================================================================= */
+/* OCULTAR FLECHAS DE INPUT NUMBER */
+/* ========================================================================= */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+/* ===================================================== */
+/* MODALES ESTILO ROSA ESPOCH */
+/* ===================================================== */
+
+.modal-content{
+    border:none;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(139,20,88,.25);
+}
+
+/* CABECERA */
+.modal-header{
+    background: linear-gradient(
+        135deg,
+        #ff4fa3,
+        #ff7abf
+    );
+    color:white;
+    border-bottom:none;
+}
+
+.modal-title{
+    font-weight:700;
+}
+
+.modal-header .btn-close{
+    filter:brightness(0) invert(1);
+}
+
+/* CUERPO */
+.modal-body{
+    padding:25px;
+    background:#fffafc;
+}
+
+/* LABELS */
+.modal-body label{
+    color:#8b1458;
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+/* INPUTS */
+.modal-body .form-control{
+    border-radius:12px;
+    border:1px solid #f3bfd6;
+    min-height:55px;
+}
+
+.modal-body .form-control:focus{
+    border-color:#ff4fa3;
+    box-shadow:0 0 0 .2rem rgba(255,79,163,.25);
+}
+
+/* BOTON PRINCIPAL */
+.btn-primary{
+    background:#ff4fa3 !important;
+    border-color:#ff4fa3 !important;
+}
+
+.btn-primary:hover{
+    background:#d63384 !important;
+    border-color:#d63384 !important;
+}
+
+/* RESULTADO */
+.resultado-card{
+    background:white;
+    border:2px solid #ffd6e8;
+    border-radius:15px;
+    padding:15px;
+    min-height:70px;
+}
+#graficaDistancia{
+    background:white;
+    border-radius:15px;
+    padding:10px;
+    border:2px solid #ffd6e8;
+    margin-top:15px;
+}
+
+#graficaTriangulo{
+    background:white;
+    border-radius:15px;
+    padding:10px;
+    border:2px solid #ffd6e8;
+    margin-top:15px;
+}
+#graficaSol{
+    background:white;
+    border-radius:15px;
+    border:2px solid #ffd6e8;
+    padding:10px;
+    margin-top:15px;
+}
+#graficaResistencia{
+    background:white;
+    border-radius:15px;
+    border:2px solid #ffd6e8;
+    padding:10px;
+    margin-top:15px;
+}
+#graficaGimnasta{
+    background:white;
+    border-radius:15px;
+    border:2px solid #ffd6e8;
+    padding:10px;
+    margin-top:15px;
+}
+#graficaNota{
+    background:white;
+    border-radius:15px;
+    border:2px solid #ffd6e8;
+    padding:10px;
+    margin-top:15px;
+}
+#graficaVuelo{
+    background:white;
+    border-radius:15px;
+    border:2px solid #ffd6e8;
+    padding:10px;
+    margin-top:15px;
+}
+#graficaTrig{
+
+    background:white;
+    border-radius:15px;
+    border:2px solid #ffd6e8;
+    padding:10px;
+    margin-top:15px;
+
+}
+#graficaEdad{
+    background:white;
+    border-radius:15px;
+    border:2px solid #ffd6e8;
+    padding:10px;
+}
+#graficaEcuacion{
+
+    background:white;
+    border-radius:15px;
+    border:2px solid #ffd6e8;
+    padding:10px;
+
+}
+/* TABLA EJERCICIO 17 */
+
+#res17 table {
+
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+
+}
+
+#res17 th {
+
+    background: #ffb6d9;
+    color: #8b1458;
+    font-weight: bold;
+
+}
+
+#res17 td:hover {
+
+    background: #ffe4f1;
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: .2s;
+
+}

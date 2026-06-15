@@ -1,0 +1,75 @@
+<div class="exercise-container">
+
+    <div class="text-center mb-4">
+
+        <h6 class="text-magenta fw-bold">
+            Clasificación de Nota
+        </h6>
+
+        <p class="text-muted mb-0">
+            Ingrese una nota entre 0 y 100
+        </p>
+
+    </div>
+
+    <div class="mb-4">
+
+        <label class="form-label">
+            Nota del estudiante
+        </label>
+
+        <input
+        type="number"
+        id="nota"
+        class="form-control"
+        placeholder="Ej: 85"
+        min="0"
+        max="100"
+
+        onkeydown="
+            if(['e','E','+','-'].includes(event.key)){
+                event.preventDefault();
+            }
+        "
+
+        oninput="
+            if(this.value > 100) this.value = 100;
+            if(this.value < 0) this.value = '';
+        "
+
+        onkeypress="siguienteCampo(event,'btnCalcular8')">
+
+    </div>
+
+    <button
+        id="btnCalcular8"
+        class="btn btn-primary px-4 py-2"
+        onclick="ejecutarEjercicio(8)">
+        Clasificar Nota
+    </button>
+
+    <div
+        id="res8"
+        class="resultado-card mt-4">
+
+        <span class="text-muted">
+            El resultado aparecerá aquí...
+        </span>
+
+    </div>
+
+    <div class="mt-4">
+        <canvas id="graficaNota"></canvas>
+    </div>
+
+    <div class="d-flex justify-content-end mt-4">
+
+        <button
+            class="btn btn-limpiar"
+            onclick="limpiarEjercicio(8)">
+            Limpiar
+        </button>
+
+    </div>
+
+</div>

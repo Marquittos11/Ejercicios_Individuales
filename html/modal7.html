@@ -1,0 +1,105 @@
+<div class="exercise-container">
+
+    <div class="text-center mb-4">
+
+        <h6 class="text-magenta fw-bold">
+            Puntuación de la Gimnasta
+        </h6>
+
+        <p class="text-muted mb-0">
+            Se elimina la nota más alta y la más baja.
+        </p>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-4 mb-3">
+            <label class="form-label">Juez 1</label>
+            <input
+                type="number"
+                id="j1"
+                class="form-control"
+                min="0"
+                max="10"
+                onkeypress="siguienteCampo(event,'j2')">
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label class="form-label">Juez 2</label>
+            <input
+                type="number"
+                id="j2"
+                class="form-control"
+                min="0"
+                max="10"
+                onkeypress="siguienteCampo(event,'j3')">
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label class="form-label">Juez 3</label>
+            <input
+                type="number"
+                id="j3"
+                class="form-control"
+                min="0"
+                max="10"
+                onkeypress="siguienteCampo(event,'j4')">
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Juez 4</label>
+            <input
+                type="number"
+                id="j4"
+                class="form-control"
+                min="0"
+                max="10"
+                onkeypress="siguienteCampo(event,'j5')">
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Juez 5</label>
+            <input
+                type="number"
+                id="j5"
+                class="form-control"
+                min="0"
+                max="10"
+                onkeypress="siguienteCampo(event,'btnCalcular7')">
+        </div>
+
+    </div>
+
+    <button
+        id="btnCalcular7"
+        class="btn btn-primary px-4 py-2"
+        onclick="ejecutarEjercicio(7)">
+        Calcular Puntuación
+    </button>
+
+    <div
+        id="res7"
+        class="resultado-card mt-4">
+
+        <span class="text-muted">
+            El resultado aparecerá aquí...
+        </span>
+
+    </div>
+
+    <div class="mt-4">
+        <canvas id="graficaGimnasta"></canvas>
+    </div>
+
+    <div class="d-flex justify-content-end mt-4">
+
+        <button
+            class="btn btn-limpiar"
+            onclick="limpiarEjercicio(7)">
+            Limpiar
+        </button>
+
+    </div>
+
+</div>

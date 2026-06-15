@@ -1,0 +1,107 @@
+<div class="exercise-container">
+
+    <div class="text-center mb-4">
+
+        <h6 class="text-magenta fw-bold">
+            Calculadora de Edad
+        </h6>
+
+        <p class="text-muted">
+            Ingrese su fecha de nacimiento
+        </p>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-4 mb-3">
+
+            <label class="form-label">
+                Día
+            </label>
+
+            <input
+                type="number"
+                id="diaN"
+                class="form-control"
+                min="1"
+                max="31"
+                onkeydown="soloPositivos(event)"
+                onkeypress="siguienteCampo(event,'mesN')">
+
+        </div>
+
+        <div class="col-md-4 mb-3">
+
+            <label class="form-label">
+                Mes
+            </label>
+
+            <input
+                type="number"
+                id="mesN"
+                class="form-control"
+                min="1"
+                max="12"
+                onkeydown="soloPositivos(event)"
+                onkeypress="siguienteCampo(event,'anioN')">
+
+        </div>
+
+        <div class="col-md-4 mb-3">
+
+            <label class="form-label">
+                Año
+            </label>
+
+            <input
+                type="number"
+                id="anioN"
+                class="form-control"
+                min="1900"
+                max="2100"
+                onkeydown="soloPositivos(event)"
+                onkeypress="siguienteCampo(event,'btnCalcular11')">
+
+        </div>
+
+    </div>
+
+    <button
+        id="btnCalcular11"
+        class="btn btn-primary px-4 py-2"
+        onclick="ejecutarEjercicio(11)">
+
+        Calcular Edad
+
+    </button>
+
+    <div
+        id="res11"
+        class="resultado-card mt-4">
+
+        <span class="text-muted">
+            El resultado aparecerá aquí...
+        </span>
+
+    </div>
+
+    <div class="mt-4">
+
+        <canvas id="graficaEdad"></canvas>
+
+    </div>
+
+    <div class="d-flex justify-content-end mt-4">
+
+        <button
+            class="btn btn-limpiar"
+            onclick="limpiarEjercicio(11)">
+
+            Limpiar
+
+        </button>
+
+    </div>
+
+</div>

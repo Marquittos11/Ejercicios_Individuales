@@ -1,0 +1,82 @@
+<div class="exercise-container">
+
+    <div class="text-center mb-4">
+
+        <h6 class="text-magenta fw-bold">
+            Resistencia Equivalente en Paralelo
+        </h6>
+
+        <p class="text-muted mb-0">
+            Req = (R1 × R2) / (R1 + R2)
+        </p>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-6 mb-3">
+
+            <label class="form-label">
+                Resistencia 1 (Ω)
+            </label>
+
+            <input
+                type="number"
+                id="r1"
+                class="form-control"
+                placeholder="Ej: 100"
+                min="0"
+                onkeypress="siguienteCampo(event,'r2')">
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+
+            <label class="form-label">
+                Resistencia 2 (Ω)
+            </label>
+
+            <input
+                type="number"
+                id="r2"
+                class="form-control"
+                placeholder="Ej: 220"
+                min="0"
+                onkeypress="siguienteCampo(event,'btnCalcular6')">
+
+        </div>
+
+    </div>
+
+    <button
+        id="btnCalcular6"
+        class="btn btn-primary px-4 py-2"
+        onclick="ejecutarEjercicio(6)">
+        Calcular Req
+    </button>
+
+    <div
+        id="res6"
+        class="resultado-card mt-4">
+
+        <span class="text-muted">
+            El resultado aparecerá aquí...
+        </span>
+
+    </div>
+
+    <div class="mt-4">
+        <canvas id="graficaResistencia"></canvas>
+    </div>
+
+    <div class="d-flex justify-content-end mt-4">
+
+        <button
+            class="btn btn-limpiar"
+            onclick="limpiarEjercicio(6)">
+            Limpiar
+        </button>
+
+    </div>
+
+</div>

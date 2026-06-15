@@ -1,0 +1,70 @@
+<div class="exercise-container">
+
+    <div class="row">
+
+        <div class="col-md-6 mb-3">
+
+            <label class="form-label">
+                Altura del poste (h)
+            </label>
+
+            <input
+                type="number"
+                id="h5"
+                class="form-control"
+                placeholder="Ej: 12"
+                min="0"
+                onkeypress="siguienteCampo(event,'s5')">
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+
+            <label class="form-label">
+                Largo de la sombra (s)
+            </label>
+
+            <input
+                type="number"
+                id="s5"
+                class="form-control"
+                placeholder="Ej: 8"
+                min="0"
+                onkeypress="siguienteCampo(event,'btnCalcular5')">
+
+        </div>
+
+    </div>
+
+    <button
+        id="btnCalcular5"
+        class="btn btn-primary px-4 py-2"
+        onclick="ejecutarEjercicio(5)">
+        Calcular Ángulo
+    </button>
+
+    <div
+        id="res5"
+        class="resultado-card mt-4">
+
+        <span class="text-muted">
+            El resultado aparecerá aquí...
+        </span>
+
+    </div>
+
+    <div class="mt-4">
+        <canvas id="graficaSol"></canvas>
+    </div>
+
+    <div class="d-flex justify-content-end mt-4">
+
+        <button
+            class="btn btn-limpiar"
+            onclick="limpiarEjercicio(5)">
+            Limpiar
+        </button>
+
+    </div>
+
+</div>

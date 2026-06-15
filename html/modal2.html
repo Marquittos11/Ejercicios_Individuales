@@ -1,0 +1,95 @@
+<div class="exercise-container">
+
+    <h6 class="text-magenta fw-bold mb-3">
+        Punto A
+    </h6>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label class="form-label">
+                Coordenada X₁
+            </label>
+
+            <input
+                type="number"
+                id="x1"
+                class="form-control"
+                placeholder="Ej: 5"
+                onkeypress="handleEnter(event,2)">
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label class="form-label">
+                Coordenada Y₁
+            </label>
+
+            <input
+                type="number"
+                id="y1"
+                class="form-control"
+                placeholder="Ej: 3"
+                onkeypress="handleEnter(event,2)">
+        </div>
+    </div>
+
+    <h6 class="text-magenta fw-bold mt-3 mb-3">
+        Punto B
+    </h6>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label class="form-label">
+                Coordenada X₂
+            </label>
+
+            <input
+                type="number"
+                id="x2"
+                class="form-control"
+                placeholder="Ej: 10"
+                onkeypress="handleEnter(event,2)">
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label class="form-label">
+                Coordenada Y₂
+            </label>
+
+            <input
+                type="number"
+                id="y2"
+                class="form-control"
+                placeholder="Ej: 8"
+                onkeypress="handleEnter(event,2)">
+        </div>
+    </div>
+
+    <button
+        class="btn btn-primary px-4 py-2 mt-2"
+        onclick="ejecutarEjercicio(2)">
+        Calcular Distancia
+    </button>
+
+    <div
+        id="res2"
+        class="resultado-card mt-4">
+
+        <span class="text-muted">
+            La distancia aparecerá aquí...
+        </span>
+
+    </div>
+
+    <div class="mt-4">
+    <canvas id="graficaDistancia"></canvas>
+    </div>
+
+    <div class="d-flex justify-content-end mt-4">
+        <button
+            class="btn btn-limpiar"
+            onclick="limpiarEjercicio(2)">
+            Limpiar
+        </button>
+    </div>
+
+</div>

@@ -1,0 +1,41 @@
+<div class="text-center mb-3">
+    <h5 class="fw-bold text-pink">
+        🎤 Interfaz de Voz
+    </h5>
+    <p class="text-muted">
+        Escriba una frase para reproducirla mediante voz.
+    </p>
+</div>
+
+<div class="formula-box text-center mb-3">
+    <strong>Texto ➜ Voz</strong>
+</div>
+
+<div class="mb-3">
+    <label class="form-label fw-bold">
+        Ingresar texto
+    </label>
+    <input
+        type="text"
+        id="textoVoz"
+        class="form-control"
+        maxlength="200"
+        placeholder="Ejemplo: Bienvenidos al sistema"
+        onkeypress="handleEnter(event, 19)">
+</div>
+
+<div class="d-flex justify-content-center gap-2 mt-3">
+    <button class="btn btn-primary px-4"
+        onclick="ejecutarEjercicio(19)">
+        ▶ Reproducir
+    </button>
+
+    <button class="btn btn-outline-danger px-4"
+        onclick="limpiarEjercicio(19)">
+        🗑 Limpiar
+    </button>
+</div>
+
+<div id="res19" class="resultado-box mt-4">
+    <em>El resultado se mostrará aquí...</em>
+</div>

@@ -1,0 +1,88 @@
+<div class="exercise-container">
+
+    <div class="text-center mb-4">
+
+        <h6 class="text-magenta fw-bold">
+            Funciones Trigonométricas
+        </h6>
+
+        <p class="text-muted">
+            Calcule seno, coseno o tangente de un ángulo.
+        </p>
+
+    </div>
+
+    <div class="mb-3">
+
+        <label class="form-label">
+            Ángulo (grados)
+        </label>
+
+        <input
+            type="number"
+            id="angulo"
+            class="form-control"
+            placeholder="Ej: 45"
+            min="0"
+            max="360"
+            onkeydown="soloPositivos(event)"
+            onkeypress="siguienteCampo(event,'func')">
+
+    </div>
+
+    <div class="mb-3">
+
+        <label class="form-label">
+            Función
+        </label>
+
+        <select
+            id="func"
+            class="form-select">
+
+            <option value="seno">Seno</option>
+            <option value="coseno">Coseno</option>
+            <option value="tangente">Tangente</option>
+
+        </select>
+
+    </div>
+
+    <button
+        id="btnCalcular10"
+        class="btn btn-primary px-4 py-2"
+        onclick="ejecutarEjercicio(10)">
+
+        Calcular
+
+    </button>
+
+    <div
+        id="res10"
+        class="resultado-card mt-4">
+
+        <span class="text-muted">
+            El resultado aparecerá aquí...
+        </span>
+
+    </div>
+
+    <div class="mt-4">
+
+        <canvas id="graficaTrig"></canvas>
+
+    </div>
+
+    <div class="d-flex justify-content-end mt-4">
+
+        <button
+            class="btn btn-limpiar"
+            onclick="limpiarEjercicio(10)">
+
+            Limpiar
+
+        </button>
+
+    </div>
+
+</div>

@@ -1,0 +1,98 @@
+<div class="exercise-container">
+
+    <div class="text-center mb-4">
+
+        <h6 class="text-magenta fw-bold">
+            Ecuación Cuadrática
+        </h6>
+
+        <p class="text-muted">
+            ax² + bx + c = 0
+        </p>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-4 mb-3">
+
+            <label class="form-label">
+                Coeficiente a
+            </label>
+
+            <input
+                type="number"
+                id="a12"
+                class="form-control"
+                onkeypress="siguienteCampo(event,'b12')">
+
+        </div>
+
+        <div class="col-md-4 mb-3">
+
+            <label class="form-label">
+                Coeficiente b
+            </label>
+
+            <input
+                type="number"
+                id="b12"
+                class="form-control"
+                onkeypress="siguienteCampo(event,'c12')">
+
+        </div>
+
+        <div class="col-md-4 mb-3">
+
+            <label class="form-label">
+                Coeficiente c
+            </label>
+
+            <input
+                type="number"
+                id="c12"
+                class="form-control"
+                onkeypress="siguienteCampo(event,'btnCalcular12')">
+
+        </div>
+
+    </div>
+
+    <button
+        id="btnCalcular12"
+        class="btn btn-primary"
+        onclick="ejecutarEjercicio(12)">
+
+        Resolver
+
+    </button>
+
+    <div
+        id="res12"
+        class="resultado-card mt-4">
+
+        <span class="text-muted">
+            El resultado aparecerá aquí...
+        </span>
+
+    </div>
+
+    <div class="mt-4">
+
+        <canvas id="graficaEcuacion"></canvas>
+
+    </div>
+
+    <div class="d-flex justify-content-end mt-4">
+
+        <button
+            class="btn btn-limpiar"
+            onclick="limpiarEjercicio(12)">
+
+            Limpiar
+
+        </button>
+
+    </div>
+
+</div>

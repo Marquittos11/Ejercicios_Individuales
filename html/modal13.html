@@ -1,0 +1,82 @@
+<div class="exercise-container">
+
+    <div class="text-center mb-4">
+
+        <h5 class="text-magenta fw-bold">
+            Resultados de Laboratorio
+        </h5>
+
+        <p class="text-muted">
+            Ingrese la cantidad de investigadores y experimentos
+        </p>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-6 mb-3">
+
+            <label class="form-label">
+                Número de investigadores
+            </label>
+
+            <input
+                type="number"
+                id="nInv"
+                class="form-control"
+                placeholder="Ej: 3">
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+
+            <label class="form-label">
+                Número de experimentos
+            </label>
+
+            <input
+                type="number"
+                id="nExp"
+                class="form-control"
+                placeholder="Ej: 4">
+
+        </div>
+
+    </div>
+
+    <button
+        class="btn btn-primary"
+        onclick="generarMatriz13()">
+
+        Generar Matriz
+
+    </button>
+
+    <div
+        id="contenedorMatriz13"
+        class="mt-4">
+    </div>
+
+    <div
+        id="res13"
+        class="resultado-card mt-4">
+
+        <span class="text-muted">
+            Los resultados aparecerán aquí...
+        </span>
+
+    </div>
+
+    <div class="d-flex justify-content-end mt-4">
+
+        <button
+            class="btn btn-limpiar"
+            onclick="limpiarEjercicio(13)">
+
+            Limpiar
+
+        </button>
+
+    </div>
+
+</div>

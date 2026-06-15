@@ -1,0 +1,48 @@
+<div class="text-center mb-3">
+    <h5 class="fw-bold text-magenta">
+        🔠 Conteo de Letras
+    </h5>
+
+    <div class="alert alert-light border">
+        Ejemplo: <strong>ESE ES EL ERROR</strong>
+    </div>
+</div>
+
+<div class="mb-3">
+    <label class="form-label fw-bold">
+        Ingresar oración
+    </label>
+
+    <input
+        type="text"
+        id="cadena20"
+        class="form-control"
+        maxlength="200"
+        placeholder="Ejemplo: ESE ES EL ERROR"
+        onkeypress="handleEnter(event,20)">
+</div>
+
+<div class="d-flex justify-content-center gap-2 mt-3">
+
+    <button
+        class="btn btn-primary"
+        onclick="ejecutarEjercicio(20)">
+        Ejecutar
+    </button>
+
+    <button
+        class="btn btn-outline-danger"
+        onclick="limpiarEjercicio(20)">
+        🗑 Limpiar
+    </button>
+
+</div>
+
+<div
+    id="res20"
+    class="mt-4 p-3 bg-light border rounded"
+    style="min-height:80px">
+
+    <em>El resultado se mostrará aquí...</em>
+
+</div>

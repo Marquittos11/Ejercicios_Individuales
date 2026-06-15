@@ -1,0 +1,38 @@
+<div class="exercise-container">
+
+    <div class="mb-4">
+        <label class="form-label">
+            Ingrese un número de 5 cifras:
+        </label>
+
+        <input
+            type="text"
+            id="in1"
+            class="form-control"
+            placeholder="Ej: 12345"
+            maxlength="5"
+            oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,5)"
+            onkeypress="handleEnter(event,1)">
+    </div>
+
+    <button
+        class="btn btn-primary px-4 py-2"
+        onclick="ejecutarEjercicio(1)">
+        Invertir Número
+    </button>
+
+    <div class="mt-4 resultado-card" id="res1">
+        <span class="text-muted">
+            El resultado aparecerá aquí...
+        </span>
+    </div>
+
+    <div class="d-flex justify-content-end mt-4">
+        <button
+            class="btn btn-limpiar"
+            onclick="limpiarEjercicio(1)">
+            Limpiar
+        </button>
+    </div>
+
+</div>
