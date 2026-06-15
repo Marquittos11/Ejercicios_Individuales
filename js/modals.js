@@ -25,9 +25,9 @@ const exercisesInfo = [
 async function generarModales() {
     const container = document.getElementById("modals-container");
     if (!container) return;
-    
+
     let htmlModals = "";
-    
+
     // 1. Generar los "cascarones" de los modales
     exercisesInfo.forEach(ex => {
         htmlModals += `
@@ -51,9 +51,9 @@ async function generarModales() {
         </div>
         `;
     });
-    
+
     container.innerHTML = htmlModals;
-    
+
     // 2. Cargar el contenido de cada modal dinámicamente usando fetch
     for (const ex of exercisesInfo) {
         try {
@@ -126,7 +126,7 @@ function limpiarEjercicio(id) {
 
         if (res) {
 
-            if(id === 2){
+            if (id === 2) {
 
                 res.innerHTML = `
                     <span class="text-muted">
@@ -134,7 +134,7 @@ function limpiarEjercicio(id) {
                     </span>
                 `;
 
-            }else{
+            } else {
 
                 res.innerHTML = `
                     <em>El resultado se mostrará aquí...</em>
@@ -158,19 +158,19 @@ function limpiarEjercicio(id) {
     /* LIMPIEZA ESPECIAL EJERCICIO 3 */
     if (id === 3 && typeof graficaTriangulo !== "undefined") {
 
-    if (graficaTriangulo) {
-        graficaTriangulo.destroy();
-        graficaTriangulo = null;
-    }
+        if (graficaTriangulo) {
+            graficaTriangulo.destroy();
+            graficaTriangulo = null;
+        }
     }
 
     if (id === 5 && typeof graficaSol !== "undefined") {
 
-    if (graficaSol) {
+        if (graficaSol) {
 
-        graficaSol.destroy();
-        graficaSol = null;
-    }
+            graficaSol.destroy();
+            graficaSol = null;
+        }
 
     }
 
@@ -186,87 +186,100 @@ function limpiarEjercicio(id) {
 
     if (id === 7 && typeof graficaGimnasta !== "undefined") {
 
-    if (graficaGimnasta) {
+        if (graficaGimnasta) {
 
-        graficaGimnasta.destroy();
-        graficaGimnasta = null;
-    }
+            graficaGimnasta.destroy();
+            graficaGimnasta = null;
+        }
     }
 
     if (id === 8 && typeof graficaNota !== "undefined") {
 
-    if (graficaNota) {
+        if (graficaNota) {
 
-        graficaNota.destroy();
-        graficaNota = null;
-    }
+            graficaNota.destroy();
+            graficaNota = null;
+        }
     }
 
-    if(id === 9 && graficaVuelo){
+    if (id === 9 && graficaVuelo) {
 
         graficaVuelo.destroy();
         graficaVuelo = null;
     }
 
-    if(id===10){
+    if (id === 10) {
 
-    if(graficaTrig){
+        if (graficaTrig) {
 
-        graficaTrig.destroy();
-        graficaTrig=null;
-    }
-    }
-
-    if(id===11){
-
-    if(graficaEdad){
-
-        graficaEdad.destroy();
-        graficaEdad = null;
-    }
+            graficaTrig.destroy();
+            graficaTrig = null;
+        }
     }
 
-    if(id===12){
+    if (id === 11) {
 
-    if(graficaEcuacion){
+        if (graficaEdad) {
 
-        graficaEcuacion.destroy();
-        graficaEcuacion = null;
+            graficaEdad.destroy();
+            graficaEdad = null;
+        }
     }
-    } 
-    if(id===13){
+
+    if (id === 12) {
+
+        if (graficaEcuacion) {
+
+            graficaEcuacion.destroy();
+            graficaEcuacion = null;
+        }
+    }
+    if (id === 13) {
+
+        const cont =
+            document.getElementById("contenedorMatriz13");
+
+        if (cont) {
+
+            cont.innerHTML = "";
+        }
+    }
+    if (id === 14) {
+
         document.getElementById(
-        "contenedorMatriz13"
-    ).innerHTML = "";
+            "contenedorMatriz14"
+        ).innerHTML = "";
     }
-    if(id===14){
+    if (id === 15) {
 
-    document.getElementById(
-        "contenedorMatriz14"
-    ).innerHTML = "";
-    }
-    if(id===15){
-
-    document.getElementById("res15").innerHTML =
-    "<em>Los resultados aparecerán aquí...</em>";
+        document.getElementById("res15").innerHTML =
+            "<em>Los resultados aparecerán aquí...</em>";
 
     }
-    if(id===17){
+    if (id === 16) {
 
-    document.getElementById("res17").innerHTML =
-    "<em>La tabla aparecerá aquí...</em>";
+        document.getElementById("num16").value = "";
+
+        document.getElementById("res16").innerHTML =
+            "<em>El resultado se mostrará aquí...</em>";
 
     }
-    if(id===18){
+    if (id === 17) {
 
-    document.getElementById("cadena18").value="";
+        document.getElementById("res17").innerHTML =
+            "<em>La tabla aparecerá aquí...</em>";
 
-    document.getElementById("res18").innerHTML=
-    "<em>El resultado aparecerá aquí...</em>";
+    }
+    if (id === 18) {
+
+        document.getElementById("cadena18").value = "";
+
+        document.getElementById("res18").innerHTML =
+            "<em>El resultado aparecerá aquí...</em>";
 
     }
     // Detener voz del ejercicio 19
-    if(id === 19){
-    window.speechSynthesis.cancel();
+    if (id === 19) {
+        window.speechSynthesis.cancel();
     }
 }
